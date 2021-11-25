@@ -38,6 +38,9 @@ const useStyles = makeStyles(
       justifyContent: "space-between"
     },
     actionBarContainer: {
+      "&&": {
+        padding: theme.spacing(2)
+      },
       boxShadow: `0px 0px 0px 0px ${theme.palette.background.paper}`,
       transition: theme.transitions.duration.short + "ms"
     },
@@ -159,13 +162,13 @@ const ColumnPickerContent: React.FC<ColumnPickerContentProps> = props => {
         })}
       >
         <div className={classes.actionBar}>
-          <Button color="default" onClick={onReset}>
+          <Button color="text" onClick={onReset}>
             <FormattedMessage defaultMessage="Reset" description="button" />
           </Button>
           <div>
             <Button
               className={classes.cancelButton}
-              color="default"
+              color="text"
               onClick={onCancel}
             >
               <FormattedMessage {...buttonMessages.cancel} />
