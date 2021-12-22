@@ -2,7 +2,11 @@ import React from "react";
 
 import { useStyles } from "./styles";
 
-const Container = ({ children }) => {
+interface ContainerProps {
+  children: React.ReactNodeArray;
+}
+
+const Container = ({ children }: ContainerProps) => {
   const classes = useStyles({});
   return (
     !!children.length && <div className={classes.container}>{children}</div>

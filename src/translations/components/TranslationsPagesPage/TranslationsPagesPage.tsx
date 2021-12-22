@@ -56,7 +56,9 @@ const TranslationsPagesPage: React.FC<TranslationsPagesPageProps> = ({
         )}
       >
         <LanguageSwitch
-          currentLanguage={LanguageCodeEnum[languageCode]}
+          currentLanguage={
+            LanguageCodeEnum[languageCode as keyof typeof LanguageCodeEnum]
+          }
           languages={languages}
           onLanguageChange={onLanguageChange}
         />

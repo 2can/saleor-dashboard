@@ -36,7 +36,7 @@ const SaveFilterTabDialog: React.FC<SaveFilterTabDialogProps> = ({
 }) => {
   const intl = useIntl();
   const [errors, setErrors] = React.useState(false);
-  const handleErrors = data => {
+  const handleErrors = (data: SaveFilterTabDialogFormData) => {
     if (data.name.length) {
       onSubmit(data);
       setErrors(false);

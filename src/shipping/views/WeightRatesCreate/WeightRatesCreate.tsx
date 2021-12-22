@@ -4,6 +4,7 @@ import {
 } from "@saleor/channels/utils";
 import ChannelsAvailabilityDialog from "@saleor/components/ChannelsAvailabilityDialog";
 import { WindowTitle } from "@saleor/components/WindowTitle";
+import { ShippingMethodFragment_postalCodeRules } from "@saleor/fragments/types/ShippingMethodFragment";
 import useChannels from "@saleor/hooks/useChannels";
 import useNavigator from "@saleor/hooks/useNavigator";
 import { sectionNames } from "@saleor/intl";
@@ -124,7 +125,9 @@ export const WeightRatesCreate: React.FC<WeightRatesCreateProps> = ({
     });
   };
 
-  const onPostalCodeUnassign = code => {
+  const onPostalCodeUnassign = (
+    code: ShippingMethodFragment_postalCodeRules
+  ) => {
     dispatch({
       havePostalCodesChanged: true,
       postalCodeRules: filterPostalCodes(state.postalCodeRules, code)

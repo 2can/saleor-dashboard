@@ -23,7 +23,7 @@ import { useStyles } from "./styles";
 
 export interface OrderCustomerChangeDialogProps {
   open: boolean;
-  onClose();
+  onClose(): void;
   onConfirm(data: OrderCustomerChangeData): void;
 }
 

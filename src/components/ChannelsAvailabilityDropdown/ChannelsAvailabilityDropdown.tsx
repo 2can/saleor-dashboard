@@ -31,7 +31,8 @@ export const ChannelsAvailabilityDropdown: React.FC<ChannelsAvailabilityDropdown
   const localizeDate = useDateLocalize();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = event => setAnchorEl(event.currentTarget);
+  const handleClick = ({ currentTarget }: React.MouseEvent) =>
+    setAnchorEl(currentTarget);
   const handleClose = () => setAnchorEl(null);
   const activeInAllChannels = React.useMemo(
     () => showStatus && channels.every(isActive),

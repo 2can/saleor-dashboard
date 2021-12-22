@@ -58,7 +58,7 @@ const TextFieldWithChoice: React.FC<TextFieldWithChoiceProps> = props => {
               open: menuOpen,
               actions: { open: openMenu, close: closeMenu }
             }) => {
-              const handleSelect = value => {
+              const handleSelect = (value: string) => {
                 onChange({
                   target: {
                     name: ChoiceProps.name,

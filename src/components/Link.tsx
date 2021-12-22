@@ -57,7 +57,7 @@ const Link: React.FC<LinkProps> = props => {
         [classes.underline]: underline,
         [classes.disabled]: disabled
       })}
-      onClick={event => {
+      onClick={(event: React.MouseEvent) => {
         if (disabled) {
           return;
         }

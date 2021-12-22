@@ -45,7 +45,7 @@ export interface OrderFulfillmentCancelDialogProps {
   errors: OrderErrorFragment[];
   open: boolean;
   warehouses: WarehouseFragment[];
-  onClose();
+  onClose(): void;
   onConfirm(data: OrderFulfillmentCancelDialogFormData);
 }
 

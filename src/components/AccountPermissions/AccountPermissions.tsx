@@ -13,6 +13,7 @@ import CardTitle from "@saleor/components/CardTitle";
 import Skeleton from "@saleor/components/Skeleton";
 import { makeStyles } from "@saleor/macaw-ui";
 import { PermissionData } from "@saleor/permissionGroups/components/PermissionGroupDetailsPage/PermissionGroupDetailsPage";
+import { PermissionEnum } from "@saleor/types/globalTypes";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -76,7 +77,10 @@ const AccountPermissions: React.FC<AccountPermissionsProps> = props => {
       }
     } as any);
   };
-  const handlePermissionChange = (key, value) => () => {
+  const handlePermissionChange = (
+    key: PermissionEnum,
+    value: boolean
+  ) => () => {
     onChange({
       target: {
         name: "permissions",

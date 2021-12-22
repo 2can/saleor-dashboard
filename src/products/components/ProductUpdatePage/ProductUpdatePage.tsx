@@ -118,16 +118,16 @@ export interface ProductUpdatePageProps extends ListActions, ChannelProps {
   onSubmit: (data: ProductUpdatePageSubmitData) => SubmitPromise;
   openChannelsModal: () => void;
   onAttributeSelectBlur: () => void;
-  onBack?();
-  onDelete();
-  onImageEdit?(id: string);
-  onImageReorder?(event: { oldIndex: number; newIndex: number });
-  onImageUpload(file: File);
-  onMediaUrlUpload(mediaUrl: string);
-  onSeoClick?();
-  onVariantAdd?();
-  onSetDefaultVariant(variant: ProductDetails_product_variants);
-  onWarehouseConfigure();
+  onBack?(): void;
+  onDelete(): void;
+  onImageEdit?(id: string): () => void;
+  onImageReorder?(event: { oldIndex: number; newIndex: number }): void;
+  onImageUpload(file: File): void;
+  onMediaUrlUpload(mediaUrl: string): void;
+  onSeoClick?(): void;
+  onVariantAdd?(): void;
+  onSetDefaultVariant(variant: ProductDetails_product_variants): void;
+  onWarehouseConfigure(): void;
 }
 
 export interface ProductUpdatePageSubmitData extends ProductUpdatePageFormData {
@@ -388,7 +388,7 @@ export const ProductUpdatePage: React.FC<ProductUpdatePageProps> = ({
                       }
                       productVariantChannelListings={data.channelListings}
                       onEndPreorderTrigger={
-                        !!variants?.[0]?.preorder
+                        variants?.[0]?.preorder
                           ? () => onVariantEndPreorderDialogOpen()
                           : null
                       }

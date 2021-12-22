@@ -8,7 +8,11 @@ import Container from "./Container";
 import { useStyles } from "./styles";
 import Transition from "./Transition";
 
-const MessageManagerProvider = ({ children }) => {
+interface MessageManagerProviderProps {
+  children: React.ReactNode | React.ReactNodeArray;
+}
+
+const MessageManagerProvider = ({ children }: MessageManagerProviderProps) => {
   const classes = useStyles();
   const timersArr = useRef<ITimer[]>([]);
   const [notifications, setNotifications] = useState<INotification[]>([]);
@@ -104,7 +108,7 @@ const MessageManagerProvider = ({ children }) => {
           notifications.map(notification => (
             <Transition key={notification.id}>
               <Notification
-                {...(!!notification.timeout
+                {...(notification.timeout
                   ? {
                       onMouseEnter: () => pauseTimer(notification),
                       onMouseLeave: () => resumeTimer(notification)
@@ -114,7 +118,7 @@ const MessageManagerProvider = ({ children }) => {
                 title={notification.message.title}
                 type={notification.message.status || "info"}
                 content={notification.message.text}
-                {...(!!notification.message.actionBtn
+                {...(notification.message.actionBtn
                   ? {
                       action: {
                         label: notification.message.actionBtn.label,

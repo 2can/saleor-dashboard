@@ -103,14 +103,14 @@ interface ProductVariantPageProps {
   variantDeactivatePreoderButtonState: ConfirmButtonTransitionState;
   onVariantReorder: ReorderAction;
   onAttributeSelectBlur: () => void;
-  onAdd();
-  onBack();
-  onDelete();
+  onAdd(): void;
+  onBack(): void;
+  onDelete(): void;
   onSubmit(data: ProductVariantUpdateSubmitData);
-  onMediaSelect(id: string);
-  onVariantClick(variantId: string);
-  onSetDefaultVariant();
-  onWarehouseConfigure();
+  onMediaSelect(id: string): void;
+  onVariantClick(variantId: string): void;
+  onSetDefaultVariant(): void;
+  onWarehouseConfigure(): void;
 }
 
 const ProductVariantPage: React.FC<ProductVariantPageProps> = ({
@@ -348,7 +348,7 @@ const ProductVariantPage: React.FC<ProductVariantPageProps> = ({
                     onFormDataChange={change}
                     onChangePreorderEndDate={handlers.changePreorderEndDate}
                     onEndPreorderTrigger={
-                      !!variant?.preorder
+                      variant?.preorder
                         ? () => setIsEndPreorderModalOpened(true)
                         : null
                     }

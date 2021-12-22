@@ -67,8 +67,8 @@ interface TimelineProps {
 interface TimelineAddNoteProps {
   message: string;
   reset: () => void;
-  onChange(event: React.ChangeEvent<any>);
-  onSubmit(event: React.FormEvent<any>);
+  onChange(event: React.ChangeEvent<any>): void;
+  onSubmit(event: React.FormEvent<any>): void;
 }
 
 export const Timeline: React.FC<TimelineProps> = props => {
@@ -85,7 +85,7 @@ export const TimelineAddNote: React.FC<TimelineAddNoteProps> = props => {
 
   const intl = useIntl();
 
-  const submit = e => {
+  const submit = (e: React.MouseEvent) => {
     reset();
     onSubmit(e);
   };

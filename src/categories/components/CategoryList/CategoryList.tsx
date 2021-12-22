@@ -49,7 +49,7 @@ interface CategoryListProps
     SortPage<CategoryListUrlSortField> {
   categories?: CategoryFragment[];
   isRoot: boolean;
-  onAdd?();
+  onAdd?(): void;
 }
 
 const numberOfColumns = 4;

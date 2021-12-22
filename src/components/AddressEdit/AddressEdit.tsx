@@ -2,6 +2,7 @@ import { TextField } from "@material-ui/core";
 import { AddressTypeInput } from "@saleor/customers/types";
 import { AccountErrorFragment } from "@saleor/fragments/types/AccountErrorFragment";
 import { OrderErrorFragment } from "@saleor/fragments/types/OrderErrorFragment";
+import { FormChange } from "@saleor/hooks/useForm";
 import { commonMessages } from "@saleor/intl";
 import { makeStyles } from "@saleor/macaw-ui";
 import { getFormErrors } from "@saleor/utils/errors";
@@ -32,8 +33,8 @@ interface AddressEditProps {
   data: AddressTypeInput;
   disabled?: boolean;
   errors: Array<AccountErrorFragment | OrderErrorFragment>;
-  onChange(event: React.ChangeEvent<any>);
-  onCountryChange(event: React.ChangeEvent<any>);
+  onChange(event: React.ChangeEvent<any>): void;
+  onCountryChange(event: React.ChangeEvent<any>): FormChange | void;
 }
 
 function getErrorMessage(

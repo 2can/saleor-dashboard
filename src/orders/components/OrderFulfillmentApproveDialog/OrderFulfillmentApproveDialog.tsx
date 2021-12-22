@@ -28,7 +28,7 @@ export interface OrderFulfillmentAcceptDialogProps {
   confirmButtonState: ConfirmButtonTransitionState;
   errors: OrderErrorFragment[];
   open: boolean;
-  onClose();
+  onClose(): void;
   onConfirm(data: OrderFulfillmentAcceptDialogFormData);
 }
 

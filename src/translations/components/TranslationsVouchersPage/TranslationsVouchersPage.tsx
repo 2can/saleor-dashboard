@@ -55,7 +55,9 @@ const TranslationsVouchersPage: React.FC<TranslationsVouchersPageProps> = ({
         )}
       >
         <LanguageSwitch
-          currentLanguage={LanguageCodeEnum[languageCode]}
+          currentLanguage={
+            LanguageCodeEnum[languageCode as keyof typeof LanguageCodeEnum]
+          }
           languages={languages}
           onLanguageChange={onLanguageChange}
         />

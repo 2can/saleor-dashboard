@@ -43,7 +43,7 @@ interface MultiSelectFieldProps {
   name?: string;
   selectProps?: SelectProps;
   value?: string[];
-  onChange(event: any);
+  onChange(event: any): void;
 }
 
 export const MultiSelectField: React.FC<MultiSelectFieldProps> = props => {

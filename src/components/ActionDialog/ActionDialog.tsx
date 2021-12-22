@@ -14,7 +14,7 @@ export interface ActionDialogProps extends DialogProps {
   maxWidth?: Size | false;
   title: string;
   variant?: ActionDialogVariant;
-  onConfirm();
+  onConfirm(): any;
 }
 
 const ActionDialog: React.FC<ActionDialogProps> = props => {

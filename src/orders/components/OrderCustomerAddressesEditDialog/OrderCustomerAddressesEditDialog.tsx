@@ -58,7 +58,7 @@ export interface OrderCustomerAddressesEditDialogProps {
   customerAddresses?: CustomerAddresses_user_addresses[];
   defaultShippingAddress?: CustomerAddresses_user_defaultShippingAddress;
   defaultBillingAddress?: CustomerAddresses_user_defaultBillingAddress;
-  onClose();
+  onClose(): void;
   onConfirm(data: OrderCustomerAddressesEditDialogOutput): SubmitPromise;
 }
 

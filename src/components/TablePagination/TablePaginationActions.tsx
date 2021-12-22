@@ -32,7 +32,7 @@ const useStyles = makeStyles(
         transition: theme.transitions.duration.standard + "ms"
       },
       "& svg": {
-        border: `solid 1px #BDBDBD`,
+        border: "solid 1px #BDBDBD",
         borderRadius: "50%"
       },
       "&:focus, &:hover": {
@@ -58,8 +58,8 @@ export interface TablePaginationActionsProps {
   hasNextPage: boolean;
   hasPreviousPage: boolean;
   nextIconButtonProps?: any;
-  onNextPage(event);
-  onPreviousPage(event);
+  onNextPage(event: any): void;
+  onPreviousPage(event: any): void;
 }
 
 export const TablePaginationActions: React.FC<TablePaginationActionsProps> = props => {

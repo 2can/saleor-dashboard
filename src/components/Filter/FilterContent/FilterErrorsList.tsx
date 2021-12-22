@@ -8,7 +8,12 @@ import React from "react";
 import { useIntl } from "react-intl";
 
 import { validationMessages } from "../messages";
-import { FilterErrorMessages, FilterErrors, IFilterElement } from "../types";
+import {
+  FilterErrorMessages,
+  FilterErrors,
+  IFilterElement,
+  ValidationErrorCode
+} from "../types";
 
 const useStyles = makeStyles(
   theme => ({
@@ -49,7 +54,8 @@ const FilterErrorsList: React.FC<FilterErrorsListProps> = ({
   const getErrorMessage = (code: string) => {
     try {
       return intl.formatMessage(
-        errorMessages?.[code] || validationMessages[code],
+        errorMessages?.[code] ||
+          validationMessages[code as ValidationErrorCode],
         { dependencies: dependencies?.join() }
       );
     } catch (e) {

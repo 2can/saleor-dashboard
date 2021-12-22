@@ -50,7 +50,7 @@ interface SingleSelectFieldProps {
   placeholder?: string;
   value?: string;
   InputProps?: InputProps;
-  onChange(event: any);
+  onChange(event: any): void;
 }
 
 export const SingleSelectField: React.FC<SingleSelectFieldProps> = props => {

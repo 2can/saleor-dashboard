@@ -81,7 +81,10 @@ const getItemPriceAndQuantity = ({
   return { selectedQuantity, unitPrice };
 };
 
-const getFulfillmentByFulfillmentLineId = (order, fulfillmentLineId) => {
+const getFulfillmentByFulfillmentLineId = (
+  order: OrderDetails_order,
+  fulfillmentLineId: string
+) => {
   for (const fulfillment of order.fulfillments) {
     if (fulfillment.lines.find(getById(fulfillmentLineId))) {
       return fulfillment;
@@ -166,7 +169,7 @@ export const getReturnSelectedProductsAmount = (
     waitingItemsQuantities,
     unfulfilledItemsQuantities,
     fulfilledItemsQuantities
-  }
+  }: Partial<OrderReturnFormData>
 ) => {
   if (!order) {
     return 0;

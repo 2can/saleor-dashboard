@@ -102,7 +102,7 @@ const OrderCustomer: React.FC<OrderCustomerProps> = props => {
   const billingAddress = maybe(() => order.billingAddress);
   const shippingAddress = maybe(() => order.shippingAddress);
 
-  const pickupAnnotation = order => {
+  const pickupAnnotation = (order: OrderDetails_order) => {
     if (order?.deliveryMethod?.__typename === "Warehouse") {
       return (
         <>

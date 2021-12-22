@@ -1,4 +1,5 @@
 import { Button, Card } from "@material-ui/core";
+import { CategoryUpdate } from "@saleor/categories/types/CategoryUpdate";
 import { CardSpacer } from "@saleor/components/CardSpacer";
 import CardTitle from "@saleor/components/CardTitle";
 import { ConfirmButtonTransitionState } from "@saleor/components/ConfirmButton";
@@ -13,6 +14,7 @@ import { SubmitPromise } from "@saleor/hooks/useForm";
 import { sectionNames } from "@saleor/intl";
 import { Backlink } from "@saleor/macaw-ui";
 import React from "react";
+import { MutationFetchResult } from "react-apollo";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import { maybe } from "../../../misc";
@@ -49,14 +51,22 @@ export interface CategoryUpdatePageProps
   saveButtonBarState: ConfirmButtonTransitionState;
   onImageDelete: () => void;
   onSubmit: (data: CategoryUpdateData) => SubmitPromise;
-  onImageUpload(file: File);
-  onNextPage();
-  onPreviousPage();
+  onImageUpload(
+    file: File
+  ): Promise<
+    MutationFetchResult<
+      CategoryUpdate,
+      Record<string, any>,
+      Record<string, any>
+    >
+  >;
+  onNextPage(): void;
+  onPreviousPage(): void;
   onProductClick(id: string): () => void;
-  onAddProduct();
-  onBack();
-  onDelete();
-  onAddCategory();
+  onAddProduct(): void;
+  onBack(): void;
+  onDelete(): void;
+  onAddCategory(): void;
   onCategoryClick(id: string): () => void;
 }
 

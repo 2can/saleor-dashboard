@@ -31,7 +31,7 @@ export interface OrderCustomerAddressesSearchProps {
   onChangeCustomerBillingAddress: (
     customerAddress: CustomerAddresses_user_addresses
   ) => void;
-  exitSearch();
+  exitSearch(): void;
 }
 
 const OrderCustomerAddressesSearch: React.FC<OrderCustomerAddressesSearchProps> = props => {

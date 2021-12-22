@@ -40,8 +40,8 @@ interface OrderAddressEditDialogProps {
   errors: OrderErrorFragment[];
   variant: "billing" | "shipping" | string;
   countries?: ShopInfo_shop_countries[];
-  onClose();
-  onConfirm(data: AddressInput);
+  onClose(): void;
+  onConfirm(data: AddressInput): void;
 }
 
 const OrderAddressEditDialog: React.FC<OrderAddressEditDialogProps> = props => {

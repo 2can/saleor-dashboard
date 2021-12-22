@@ -1,9 +1,25 @@
+import { CollectionList_collections_edges_node_channelListings } from "@saleor/collections/types/CollectionList";
 import StatusLabel from "@saleor/components/StatusLabel";
 import useDateLocalize from "@saleor/hooks/useDateLocalize";
+import { ProductList_products_edges_node_channelListings } from "@saleor/products/types/ProductList";
 import React from "react";
-import { useIntl } from "react-intl";
+import { MessageDescriptor, useIntl } from "react-intl";
 
-export const AvailabilityStatusLabel = ({ channel, messages }) => {
+interface AvailabilityStatusLabelProps {
+  channel:
+    | CollectionList_collections_edges_node_channelListings
+    | ProductList_products_edges_node_channelListings;
+  messages: {
+    published: MessageDescriptor;
+    unpublished: MessageDescriptor;
+    willBePublished: MessageDescriptor;
+  };
+}
+
+export const AvailabilityStatusLabel = ({
+  channel,
+  messages
+}: AvailabilityStatusLabelProps) => {
   const intl = useIntl();
   const localizeDate = useDateLocalize();
 

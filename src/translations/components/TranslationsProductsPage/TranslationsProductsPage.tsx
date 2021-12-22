@@ -65,7 +65,9 @@ const TranslationsProductsPage: React.FC<TranslationsProductsPageProps> = ({
           selectedId={productId}
         />
         <LanguageSwitch
-          currentLanguage={LanguageCodeEnum[languageCode]}
+          currentLanguage={
+            LanguageCodeEnum[languageCode as keyof typeof LanguageCodeEnum]
+          }
           languages={languages}
           onLanguageChange={onLanguageChange}
         />

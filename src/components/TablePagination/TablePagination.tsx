@@ -66,8 +66,8 @@ interface TablePaginationProps {
   hasPreviousPage: boolean;
   nextIconButtonProps?: Partial<IconButtonProps>;
   onUpdateListSettings?: ListSettingsUpdate;
-  onNextPage(event);
-  onPreviousPage(event);
+  onNextPage(event: any): void;
+  onPreviousPage(event: any): void;
 }
 
 const TablePagination: React.FC<TablePaginationProps> = props => {

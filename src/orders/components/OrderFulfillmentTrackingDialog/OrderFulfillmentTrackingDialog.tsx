@@ -29,7 +29,7 @@ export interface OrderFulfillmentTrackingDialogProps {
   errors: OrderErrorFragment[];
   open: boolean;
   trackingNumber: string;
-  onClose();
+  onClose(): void;
   onConfirm(data: FormData);
 }
 

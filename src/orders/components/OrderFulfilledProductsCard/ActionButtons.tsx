@@ -11,9 +11,9 @@ interface AcionButtonsProps {
   trackingNumber?: string;
   orderIsPaid?: boolean;
   fulfillmentAllowUnpaid: boolean;
-  onTrackingCodeAdd();
-  onRefund();
-  onApprove();
+  onTrackingCodeAdd(): void;
+  onRefund(): void;
+  onApprove(): void;
 }
 
 const statusesToShow = [

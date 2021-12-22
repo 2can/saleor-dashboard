@@ -9,7 +9,7 @@ interface ControlledCheckboxProps {
   indeterminate?: boolean;
   disabled?: boolean;
   checkedIcon?: React.ReactNode;
-  onChange(event: any);
+  onChange(event: any): void;
 }
 
 export const ControlledCheckbox: React.FC<ControlledCheckboxProps> = ({
